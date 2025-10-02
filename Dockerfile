@@ -6,6 +6,6 @@ COPY src ./src
 RUN mvn clean package -DskipTests
 FROM openjdk:17-jdk-slim
 WORKDIR /app
-COPY --from=build /app/target/api-gateway-0.0.1-SNAPSHOT.jar .
+COPY --from=build /app/target/configmanagement-0.0.1-SNAPSHOT.jar .
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "/app/api-gateway-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java", "-jar", "/app/configmanagement-0.0.1-SNAPSHOT.jar"]
